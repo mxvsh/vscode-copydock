@@ -8,7 +8,6 @@ const userIdStatus = vscode.window.createStatusBarItem(
   9900
 );
 userIdStatus.text = "Waiting for ID...";
-userIdStatus.color = "white";
 userIdStatus.show();
 
 // Websocket handlers
