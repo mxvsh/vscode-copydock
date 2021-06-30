@@ -24,11 +24,17 @@ websocket.on("close", () => {
   vscode.window.showErrorMessage("Disconnected from CopyDock");
 });
 
-export function activate(context: vscode.ExtensionContext) {
-  vscode.commands.registerTextEditorCommand(
-    "copydock.handleResponse",
-    async () => {
-      websocket.on("message", async (wsdata: string) => {
+websocket.on("message", async (wsdata: string) => {
+  try {
+    let { type, payload } = JSON.parse(wsdata);
+
+    switch (type) {
+      case "user-id":
+        userIdStatus.tooltip = `Share "${payload}" with your friend`;
+        userIdStatus.text = `ID: ${payload}`;
+        break;
+
+      case "user-code":
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
           return;
@@ -37,35 +43,24 @@ export function activate(context: vscode.ExtensionContext) {
         if (!selection) {
           return;
         }
+      
+        editor.edit((builder) => {
+          builder.replace(selection, payload);
+        });
+        break;
 
-        try {
-          let { type, payload } = JSON.parse(wsdata);
-
-          switch (type) {
-            case "user-id":
-              userIdStatus.tooltip = `Share "${payload}" with your friend`;
-              userIdStatus.text = `ID: ${payload}`;
-              break;
-
-            case "user-code":
-              editor.edit((builder) => {
-                builder.replace(selection, payload);
-              });
-              break;
-
-            case "error":
-              vscode.window.showErrorMessage(payload);
-              break;
-          }
-        } catch (e) {
-          console.log(`[copydock] error parsing data`);
-        }
-      });
+      case "error":
+        vscode.window.showErrorMessage(payload);
+        break;
     }
-  );
+  } catch (e) {
+    console.log(`[copydock] error parsing data`);
+  }
+});
 
-  vscode.commands.executeCommand("copydock.handleResponse");
 
+export function activate(context: vscode.ExtensionContext) {
+  
   let disposable = vscode.commands.registerTextEditorCommand(
     "copydock.sendCode",
     async () => {
