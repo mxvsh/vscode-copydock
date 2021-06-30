@@ -1,9 +1,8 @@
 # CopyDock - Transfer your text in no time
 
-<img src="https://i.imgur.com/MQGwq2x.png" alt="drawing" width="320"/>
+<img src="https://i.imgur.com/cf49dkn.png" width="320"/>
  
 CopyDock is a handy tool for transferring code snippets or text to a friend or colleague. It comes in handy when you want to share some code snippets with your colleague; simply copy the text, enter your colleague's CopyDock ID, and hit enter; your colleague will receive the text you copied pasted directly into their editor in no time.
-
 
 ## Features
 
