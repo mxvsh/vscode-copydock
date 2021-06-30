@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import * as ws from "ws";
 let lastUserId = "";
 
-const websocket = new ws("https://copydock.herokuapp.com/");
+const websocket = new ws("http://api.xen.codes:9000/");
 const userIdStatus = vscode.window.createStatusBarItem(
   vscode.StatusBarAlignment.Right,
   9900
