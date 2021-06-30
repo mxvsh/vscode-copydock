@@ -3,6 +3,7 @@
   "displayName": "Copy Dock",
   "description": "Send your copied code or text directly to your friend's editor in no time",
   "publisher": "xencodes",
+  "icon": "assets/logo.png",
   "repository": {
     "url": "https://github.com/xencodes/vscode-copydock"
   },
@@ -11,7 +12,7 @@
     "name": "Xen",
     "url": "https://projects.xen.codes"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.57.0"
   },
