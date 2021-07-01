@@ -24,10 +24,6 @@ This extension contributes the following settings:
 
 None so far...
 
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
 ### v0.0.1
 
 Initial release of CopyDock
@@ -39,5 +35,7 @@ Initial release of CopyDock
 - [Contact me on Twitter](https://twitter.com/XenCodes)
 
 - [Source Code on GitHub](https://github.com/xencodes/vscode-copydock)
+
+- [Buy Me a Coffee](https://www.buymeacoffee.com/xencodes) 
 
 **Enjoy! Feedbacks are really appreciated ❤️**
