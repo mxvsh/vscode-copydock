@@ -1,92 +1,92 @@
 {
-  "name": "copydock",
-  "displayName": "CopyDock",
-  "description": "Send your copied code or text directly to your friend's editor in no time",
-  "publisher": "xencodes",
-  "icon": "assets/logo.png",
-  "repository": {
-    "url": "https://github.com/xencodes/vscode-copydock"
-  },
-  "author": {
-    "email": "xencodes@icloud.com",
-    "name": "Xen",
-    "url": "https://projects.xen.codes"
-  },
-  "version": "0.0.3",
-  "engines": {
-    "vscode": "^1.57.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "keywords": [
-    "copydock",
-    "send code",
-    "send text",
-    "code sync",
-    "websocket"
-  ],
-  "activationEvents": [
-    "*"
-  ],
-  "main": "./dist/extension.js",
-  "contributes": {
-    "configuration": {
-      "title": "CopyDock",
-      "properties": {
-        "copyDock.useLastUserId": {
-          "type": "boolean",
-          "default": false,
-          "description": "Specifies whether to use the last user id as a default text in the input box while sending new a code."
-        }
-      }
-    },
-    "commands": [
-      {
-        "command": "copydock.sendCode",
-        "title": "🚀 Send Code"
-      }
-    ],
-    "menus": {
-      "editor/context": [
-        {
-          "command": "copydock.sendCode",
-          "group": "5_cutcopypaste",
-          "when": "editorTextFocus"
-        }
-      ]
-    }
-  },
-  "scripts": {
-    "vscode:prepublish": "yarn run package",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "test-compile": "tsc -p ./",
-    "test-watch": "tsc -watch -p ./",
-    "pretest": "yarn run test-compile && yarn run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
-  },
-  "devDependencies": {
-    "@types/glob": "^7.1.3",
-    "@types/mocha": "^8.2.2",
-    "@types/node": "14.x",
-    "@types/vscode": "^1.57.0",
-    "@typescript-eslint/eslint-plugin": "^4.26.0",
-    "@typescript-eslint/parser": "^4.26.0",
-    "eslint": "^7.27.0",
-    "glob": "^7.1.7",
-    "mocha": "^8.4.0",
-    "ts-loader": "^9.2.2",
-    "typescript": "^4.3.2",
-    "vscode-test": "^1.5.2",
-    "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.0"
-  },
-  "dependencies": {
-    "@types/ws": "^7.4.5",
-    "socket.io-client": "^4.1.2",
-    "ws": "^7.5.1"
-  }
+	"name": "copydock",
+	"displayName": "CopyDock",
+	"description": "Send your copied code or text directly to your friend's editor in no time",
+	"publisher": "xencodes",
+	"icon": "assets/logo.png",
+	"repository": {
+		"url": "https://github.com/xencodes/vscode-copydock"
+	},
+	"author": {
+		"email": "xencodes@icloud.com",
+		"name": "Xen",
+		"url": "https://projects.xen.codes"
+	},
+	"version": "0.0.5",
+	"engines": {
+		"vscode": "^1.57.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"copydock",
+		"send code",
+		"send text",
+		"code sync",
+		"websocket"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"configuration": {
+			"title": "CopyDock",
+			"properties": {
+				"copyDock.useLastUserId": {
+					"type": "boolean",
+					"default": false,
+					"description": "Specifies whether to use the last user id as a default text in the input box while sending new a code."
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "copydock.sendCode",
+				"title": "🚀 Send Code"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "copydock.sendCode",
+					"group": "5_cutcopypaste",
+					"when": "editorTextFocus"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"test-compile": "tsc -p ./",
+		"test-watch": "tsc -watch -p ./",
+		"pretest": "yarn run test-compile && yarn run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "14.x",
+		"@types/vscode": "^1.57.0",
+		"@typescript-eslint/eslint-plugin": "^4.26.0",
+		"@typescript-eslint/parser": "^4.26.0",
+		"eslint": "^7.27.0",
+		"glob": "^7.1.7",
+		"mocha": "^8.4.0",
+		"ts-loader": "^9.2.2",
+		"typescript": "^4.3.2",
+		"vscode-test": "^1.5.2",
+		"webpack": "^5.38.1",
+		"webpack-cli": "^4.7.0"
+	},
+	"dependencies": {
+		"@types/ws": "^7.4.5",
+		"socket.io-client": "^4.1.2",
+		"ws": "^7.5.1"
+	}
 }
